@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Banner from './pages/Banner';
+import Header from './pages/Header';
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import "swiper/css"
+import Main from './pages/Main';
+import Footer from './pages/Footer';
+import BackToTopBtn from './components/BackToTopBtn';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [scroll, setScroll] = useState(0)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY)
+    })
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header scroll={scroll} />
+      <Banner />
+      <Main />
+      <Footer />
+      <BackToTopBtn scroll={scroll} />
+    </>
   );
 }
 
