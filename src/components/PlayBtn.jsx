@@ -15,9 +15,9 @@ const PlayBtn = ({ movie }) => {
           movie.active ? "active" : undefined
         }`}
       >
-        <a href="/" className="playBtn" onClick={toggleModal}>
+        <button className="playBtn border-0" onClick={toggleModal}>
           <ion-icon name="play-outline"></ion-icon>
-        </a>
+        </button>
         <p>Watch Trailer</p>
       </div>
       {movie.active && (
