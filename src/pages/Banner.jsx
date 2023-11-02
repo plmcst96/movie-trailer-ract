@@ -45,7 +45,7 @@ const Banner = () => {
             <div className="container-fluid">
               <div className="row">
                 <div
-                  className="col-lg-6 col-md-12"
+                  className="col-12 col-md-6"
                   style={{ marginTop: "-5.2em" }}
                 >
                   <MovieContent movie={movie} />
